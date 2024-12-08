@@ -1,17 +1,8 @@
 FROM ubuntu:22.04
 
 RUN apt update && apt -y upgrade \
-    && apt -y install ssh sudo \
-    && apt clean \
-    && rm -rf /var/lib/apt/list/* \
+    && apt -y install sudo \
     && apt -y install python3-pip
-
-RUN mkdir /var/run/sshd && \
-    echo 'root:password' | chpasswd && \
-    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config
-
-WORKDIR /root/.ssh
-COPY /settings/id_rsa.pub authorized_keys
 
 ARG USERNAME=user
 ARG GROUPNAME=user
@@ -26,7 +17,6 @@ RUN groupadd -g $GID $GROUPNAME && \
 USER $USERNAME
 WORKDIR /home/$USERNAME/
 
-COPY /settings/.bashrc /home/user
+COPY settings/.bashrc /home/user
 
-EXPOSE 3007
-CMD ["sudo", "/usr/sbin/sshd", "-D"]
+CMD ["tail", "-f", "/dev/null"]

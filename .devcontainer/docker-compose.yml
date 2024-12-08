@@ -10,5 +10,3 @@ services:
       - ../src:/work/src
       - ../settings:/work/settings
       - ../.vscode:/work/.vscode
-    ports:
-      - 3007:3007 # 計算機のポート3007をコンテナの3007に対応させる

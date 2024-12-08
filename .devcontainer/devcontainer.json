@@ -1,0 +1,36 @@
+{
+    "name": "sudo-is-testing",
+    "workspaceFolder": "/work",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "service": "sudo-is-testing",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "charliermarsh.ruff",
+                "davidanson.vscode-markdownlint",
+                "esbenp.prettier-vscode",
+                // "mechatroner.rainbow-csv",
+                "ms-ceintl.vscode-language-pack-ja",
+                "ms-python.debugpy",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter-keymap",
+                // "ms-vscode-remote.remote-containers",
+                // "ms-vscode-remote.remote-ssh",
+                // "ms-vscode-remote.remote-ssh-edit",
+                // "ms-vscode-remote.remote-wsl",
+                "ms-vscode.cpptools-themes",
+                // "ms-vscode.remote-explorer",
+                "oderwat.indent-rainbow",
+                // "pkief.material-icon-theme",
+                "shaneliesegang.vscode-simple-icons-rev",
+                "shardulm94.trailing-spaces",
+                "tomoki1207.pdf",
+                "usernamehw.errorlens",
+                "yzane.markdown-pdf",
+                "yzhang.markdown-all-in-one",
+                "njpwerner.autodocstring"
+                ]
+        }
+    }
+}

@@ -1,0 +1,14 @@
+services:
+  sudo-is-testing:
+    build:
+      context: ../ # カレントディレクトリ”./”のDockerfileからビルド
+      dockerfile: ./.devcontainer/Dockerfile # contextからの相対パス
+    image: sudo-is-testing # compose経由なのでイメージ名指定
+    container_name: sudo-is-testing # コンテナ名の指定
+    volumes: # composeファイルからの相対パス
+      - ../data:/work/data #カレントディレクトリをDockerで構成したUbuntuコンテナの/workにマウント
+      - ../src:/work/src
+      - ../settings:/work/settings
+      - ../.vscode:/work/.vscode
+    ports:
+      - 3007:3007 # 計算機のポート3007をコンテナの3007に対応させる

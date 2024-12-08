@@ -1,0 +1,134 @@
+[project]
+name = "Sudo" # <- 適当に変えてください
+requires-python = ">=3.10"
+
+[tool.black]
+line-length = 120
+exclude = '''
+(
+    migrations
+    | .pytest_cache
+    | venv
+    | .flake8
+    | .git
+    | .ipynb_checkpoints
+    | __pycache__
+    | build
+)
+'''
+
+[tool.isort]
+include_trailing_comma = true
+line_length = 120
+multi_line_output = 3
+profile = "black"
+
+# add lib description
+import_heading_stdlib      = "Standard Library"
+import_heading_thirdparty  = "Third Party Library"
+import_heading_firstparty  = "First Party Library"
+import_heading_localfolder = "Local Library"
+
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = ["E203","W503","W504"]
+exclude = [
+    "venv", ".git", ".gitignore",
+    ".ipynb_checkpoints", "__pycache__",
+    ".devcontainer", ".vscode",
+    "build", "bin", "lib", "tmp", "scripts", "configs", "notebooks",
+    "env", "env.example",  "environment.yaml",
+    ".pre-commit-config.yaml", ".project-root", "Pipfile", "pyprocjet.toml",
+    "Makefile", "README.md",
+]
+
+max-complexity = 10
+
+[tool.ruff]
+exclude = [ # 以下のディレクトリは除く
+    "venv", ".git", ".gitignore",
+    ".ipynb_checkpoints", "__pycache__",
+    ".devcontainer", ".vscode",
+    "build", "bin", "lib", "tmp", "scripts", "configs", "notebooks",
+    "env", "env.example",  "environment.yaml",
+    ".pre-commit-config.yaml", ".project-root", "Pipfile", "pyprocjet.toml",
+    "Makefile", "README.md", "cache","tests","assets"
+]
+
+target-version = "py310" # ※pythonのバージョンにあわせて変更すること
+line-length = 120
+indent-width = 4
+output-format = "grouped"  # 出力結果をファイルごとにまとめる
+# extend-include = ["*.ipynb"]  # notebook ファイルも対象に追加
+# output-format = "concise"  # 出力結果をデフォルトに
+# output-format = "full"  # 出力結果にソースを表示
+# preview = true  # unstable なルールまでチェックする
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle
+         # チェック内容: pep8に準拠しているかチェックする
+         # 理由: pep8に準拠していることで、コードの書き方が統一されると感じているため
+    "F", # pyflakes
+         # チェック内容: 未使用の変数やimportをチェックする
+         # 理由: 未使用の変数やimportがあると、コードの見通しが悪くなると感じているため
+    "D", # pydocstyle
+         # チェック内容: docstring の書き方をチェックする
+         # 理由: docstring を書く手間はかかるが、可読性が上がると感じているため
+    "ANN", # flake8-annotations
+         # チェック内容: アノテーションの型ヒントをチェックする
+         # 理由: アノテーションを書くことで、レビュー側も書く側もやりやすくなると感じているため
+    # 上記以外で個別に追加したいルール
+    "A001", # 内蔵関数の影響をうける変数に警告を出す
+    "A002", #, # 関数引数の影響をうける変数に警告を出す
+    "A003", # クラス属性がtypingモジュールの内蔵関数を上書きする場合に警告を出す
+    "ARG001", # 使用されていない関数の引数に警告を出す
+    "ARG002", # 使用されていないメソッドの引数に警告を出す
+    "ARG003", # 使用されていないクラスメソッドの引数に警告を出す
+    "ARG004", # 使用されていないstaticメソッドの引数に警告を出す
+    "ARG005", # 使用されていないラムダ式の引数に警告を出す
+    "B002", # 一般的に使われていない接頭式インクリメント/デクリメント演算子の使用を禁止する
+    "B003", # os.environへの代入では環境変数がクリアされないことを警告する
+    "B006", # 可変オブジェクトをデフォルト引数として使うことを禁止する
+    "B007", # ループ変数が使われていない場合に警告を出す
+    "B008", # デフォルト引数で関数呼び出しをする場合に警告を出す
+    "B023", # ループ変数がファンクション定義に使われている場合に警告を出す
+    "BLE001", # 包括的な例外処理(except:)を禁止する
+    "C414", # 必要のない二重変換を禁止する
+    "C901", # 複雑度の高い関数に警告を出す
+    "FIX001", # コメントにFIXMEがある場合に警告を出す
+    "N801", # クラス名の命名規則違反に警告を出す
+    "N802", # 関数名の命名規則違反に警告を出す
+    "N803", # 引数名の命名規則違反に警告を出す
+    "N815", # クラススコープ内の変数名が混在している場合に警告を出す
+    "N816", # グローバルスコープ内の変数名が混在している場合に警告を出す
+    "N999", # モジュール名の命名規則違反に警告を出す
+    "PD002", # pandasのinplace=Trueの使用を避けるよう促す
+    "PD011", # pandasの.valuesの使用をやめて.to_numpyを使うよう促す
+    "PD901", # pandasのdfという汎用的な変数名の使用を避けるよう促す
+    "PLE1142", # awaitがasync関数外で使われている場合に警告を出す
+    "PLW0127", # 自己代入を避けるよう促す
+    "PLW0603", # グローバル変数の使用を避けるよう促す
+    "PLW2901", # ループ変数が外部変数を上書きしないよう促す
+    "RUF012", # クラス属性の初期値にミュータブルオブジェクトを使わないよう促す
+    "YTT204", # datetime.datetime.now()の呼び出しにタイムゾーンを指定するよう促す
+    "PERF101", # 不要なリストへのキャストを避けるよう促す
+    "PERF102", # dictのみの一部の要素を使う場合はkeys/valuesを使うよう促す
+]
+ignore = [
+    "ANN202", # 複数個のreturnに非対応のため
+    "D417",   # 発生原因不明のため(暫定)
+    "D415",    # docstring の文末に `.` が必要
+               # (日本語では不便なため無視)
+    "ANN101",  # [[deprecated]] `self` にアノテーションが必要
+               # (のちのバージョンで削除されるため無視)
+    "ANN102",  # [[deprecated]] `cls` にアノテーションが必要
+               # (のちのバージョンで削除されるため無視)
+]
+
+[tool.ruff.lint.pylint]
+max-args = 10
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

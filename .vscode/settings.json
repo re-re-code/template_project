@@ -1,0 +1,80 @@
+{
+    "markdownlint.config":{
+        "MD033":false,
+        "MD024":false,
+    },
+    "markdown-pdf.convertOnSave":false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.startupEditor": "none",
+    // ======== エディタの全般設定 ========
+    "editor.formatOnSave": true, // ファイル保存時に自動フォーマットを実行
+    "editor.formatOnPaste": false, // 貼り付け時に自動フォーマットを無効化
+    "editor.formatOnType": false, // タイピング中の自動フォーマットを無効化
+    "editor.formatOnSaveMode": "file", // 保存時にファイル全体を常にフォーマット
+    "editor.wordWrap": "on", // 長い行を自動で折り返して表示
+    "editor.unicodeHighlight.includeComments": false, // コメント内のUnicodeハイライトを無効化し、日本語コメントのハイライトを防ぐ
+    "editor.unicodeHighlight.nonBasicASCII": false, // 非ASCII文字のハイライトを無効化
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
+    },
+    "editor.foldingStrategy": "auto", // 自動折りたたみでコードの見やすさを向上
+    "editor.inlineSuggest.enabled": true, // エラーとサジェストをインラインで表示し作業効率を向上
+    // ======== Markdownファイルの設定 ========
+    "markdown.extension.print.imgToBase64": true, // Markdownファイル内の画像をBase64に変換し互換性を向上
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint" // MarkdownのデフォルトフォーマッターにMarkdownLintを指定
+    },
+    // ======== Pythonファイルの設定 ========
+    "[python]": {
+        "editor.formatOnSave": true, // Pythonファイル保存時に自動フォーマットを実行
+        "editor.formatOnPaste": false, // Pythonファイルの貼り付け時の自動フォーマットを無効化
+        "editor.formatOnType": false, // Pythonファイルのタイピング中の自動フォーマットを無効化
+        "editor.formatOnSaveMode": "file", // 保存時にファイル全体を常にフォーマット
+        "editor.defaultFormatter": "charliermarsh.ruff", // PythonのデフォルトフォーマッターにRuffを指定
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    // ======== Ruff設定 (PythonのLinter) ========
+    "ruff.lint.args": [
+        "--config=./settings/pyproject.toml" // Ruffの設定ファイルを指定
+    ],
+    // ======== ワークベンチの外観設定 ========
+    "workbench.iconTheme": "simple-icons", // アイコンテーマをシンプルに設定
+    "workbench.colorTheme": "Default Dark Modern", // カラーテーマを暗めに設定
+    // ======== 自動保存設定 ========
+    "files.autoSave": "afterDelay", // 一定時間の遅延後に自動保存
+    "files.autoSaveDelay": 1000, // 自動保存までの遅延時間を1秒に設定
+    // ======== 拡張機能の推奨設定 ========
+    "extensions.ignoreRecommendations": false, // 推奨される拡張機能を無視せず、推奨を表示
+    // ======== ターミナルのフォント設定 ========
+    "terminal.integrated.fontSize": 14, // ターミナルのフォントサイズを14に設定し視認性を向上
+    // ======== プロジェクトの利便性向上設定 ========
+    "files.exclude": {
+        "**/__pycache__": true, // Pythonのキャッシュディレクトリを非表示
+        "**/.DS_Store": true, // macOSの不要ファイルを非表示
+        "**/.git": true // Gitディレクトリを非表示
+    },
+    "search.exclude": {
+        "**/node_modules": true, // node_modulesを検索対象から除外
+        "**/__pycache__": true // __pycache__ディレクトリを検索対象から除外
+    },
+    // ======== IntelliSenseの設定 ========
+    "editor.quickSuggestions": {
+        "other": true, // 通常のコード補完を有効化
+        "comments": false, // コメント内での補完を無効化
+        "strings": false // 文字列内での補完を無効化
+    },
+    // ======== JSONとJavaScriptファイル設定 ========
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode" // JSONファイルのデフォルトフォーマッターにPrettierを指定
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode", // JavaScriptファイルのデフォルトフォーマッターにPrettierを指定
+        "editor.formatOnSave": true // JavaScriptファイル保存時に自動フォーマットを有効化
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
+}
+

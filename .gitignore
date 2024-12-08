@@ -6,7 +6,6 @@ __pycache__/
 *.pyc
 *.log
 
-#
+# 不要
 /settings/id_rsa.pub
-/home/sudo-c3/template_project/settings/id_rsa.pub
 src

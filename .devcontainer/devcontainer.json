@@ -1,29 +1,30 @@
 {
-    "name": "sudo-is-testing",
-    "workspaceFolder": "/work",
-    "dockerComposeFile": ["docker-compose.yml"],
-    "service": "sudo-is-testing",
+    "name": "sudo-is-testing", // コンテナ名。VS Code内での識別名
+    "workspaceFolder": "/work", // コンテナ内でのワークスペースディレクトリ
+    "dockerComposeFile": ["docker-compose.yml"], // 使用するDocker Composeファイル
+    "service": "sudo-is-testing", // 利用するサービス名（docker-compose.ymlで定義）
     "customizations": {
         "vscode": {
-            "extensions": [
-                "charliermarsh.ruff",
-                "davidanson.vscode-markdownlint",
-                "esbenp.prettier-vscode",
-                "ms-ceintl.vscode-language-pack-ja",
-                "ms-python.debugpy",
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "ms-toolsai.jupyter-keymap",
-                "ms-vscode.cpptools-themes",
-                "oderwat.indent-rainbow",
-                "shaneliesegang.vscode-simple-icons-rev",
-                "shardulm94.trailing-spaces",
-                "tomoki1207.pdf",
-                "usernamehw.errorlens",
-                "yzane.markdown-pdf",
-                "yzhang.markdown-all-in-one",
-                "njpwerner.autodocstring"
-                ]
+            "extensions": [ // 必要なVS Code拡張機能一覧
+                "charliermarsh.ruff", // Python用Lintツール
+                "davidanson.vscode-markdownlint", // MarkdownのLintツール
+                "esbenp.prettier-vscode", // コードフォーマッター
+                "ms-ceintl.vscode-language-pack-ja", // 日本語化拡張
+                "ms-python.debugpy", // Pythonデバッグツール
+                "ms-python.python", // Python拡張機能
+                "ms-python.vscode-pylance", // 高速なPythonコード補完
+                "ms-toolsai.jupyter-keymap", // Jupyter Notebook操作を便利にするツール
+                "ms-vscode.cpptools-themes", // C++用のテーマ
+                "oderwat.indent-rainbow", // インデント可視化ツール
+                "shaneliesegang.vscode-simple-icons-rev", // アイコンテーマ
+                "shardulm94.trailing-spaces", // 不要な空白を検出
+                "tomoki1207.pdf", // PDFビューア
+                "usernamehw.errorlens", // エラー表示を視覚化
+                "yzane.markdown-pdf", // MarkdownをPDFに変換
+                "yzhang.markdown-all-in-one", // Markdown作成をサポート
+                "njpwerner.autodocstring", // Python関数のdocstring自動生成
+                "ms-toolsai.jupyter"
+            ]
         }
     }
 }

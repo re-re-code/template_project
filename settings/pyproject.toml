@@ -37,7 +37,7 @@ exclude = [
     "venv", ".git", ".gitignore",
     ".ipynb_checkpoints", "__pycache__",
     ".devcontainer", ".vscode",
-    "build", "bin", "lib", "tmp", "scripts", "configs", "notebooks",
+    "build", "bin", "lib", "tmp", "scripts", "configs",
     "env", "env.example",  "environment.yaml",
     ".pre-commit-config.yaml", ".project-root", "Pipfile", "pyprocjet.toml",
     "Makefile", "README.md",
@@ -50,7 +50,7 @@ exclude = [ # 以下のディレクトリは除く
     "venv", ".git", ".gitignore",
     ".ipynb_checkpoints", "__pycache__",
     ".devcontainer", ".vscode",
-    "build", "bin", "lib", "tmp", "scripts", "configs", "notebooks",
+    "build", "bin", "lib", "tmp", "scripts", "configs",
     "env", "env.example",  "environment.yaml",
     ".pre-commit-config.yaml", ".project-root", "Pipfile", "pyprocjet.toml",
     "Makefile", "README.md", "cache","tests","assets"
@@ -60,7 +60,7 @@ target-version = "py310" # ※pythonのバージョンにあわせて変更す�
 line-length = 120
 indent-width = 4
 output-format = "grouped"  # 出力結果をファイルごとにまとめる
-# extend-include = ["*.ipynb"]  # notebook ファイルも対象に追加
+extend-include = ["*.ipynb"]  # notebook ファイルも対象に追加
 # output-format = "concise"  # 出力結果をデフォルトに
 # output-format = "full"  # 出力結果にソースを表示
 # preview = true  # unstable なルールまでチェックする

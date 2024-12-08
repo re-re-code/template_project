@@ -4,9 +4,8 @@
         "MD024":false,
     },
     "markdown-pdf.convertOnSave":false,
-    "vsicons.dontShowNewVersionMessage": true,
-    "workbench.startupEditor": "none",
     // ======== エディタの全般設定 ========
+    "editor.defaultFormatter": "charliermarsh.ruff", // Ruffをデフォルトフォーマッターに指定
     "editor.formatOnSave": true, // ファイル保存時に自動フォーマットを実行
     "editor.formatOnPaste": false, // 貼り付け時に自動フォーマットを無効化
     "editor.formatOnType": false, // タイピング中の自動フォーマットを無効化
@@ -32,6 +31,18 @@
         "editor.formatOnType": false, // Pythonファイルのタイピング中の自動フォーマットを無効化
         "editor.formatOnSaveMode": "file", // 保存時にファイル全体を常にフォーマット
         "editor.defaultFormatter": "charliermarsh.ruff", // PythonのデフォルトフォーマッターにRuffを指定
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    // ======== Jupyter固有の設定 ========
+    "[jupyter]": {
+        "editor.formatOnSave": true, // 保存時に自動フォーマットを有効化
+        "editor.formatOnSaveMode": "file", // 保存時にファイル全体を常にフォーマット
+        "editor.formatOnPaste": false, // Pythonファイルの貼り付け時の自動フォーマットを無効化
+        "editor.formatOnType": false, // Pythonファイルのタイピング中の自動フォーマットを無効化
+        "editor.defaultFormatter": "charliermarsh.ruff", // Ruffを適用
         "editor.codeActionsOnSave": {
             "source.fixAll": "explicit",
             "source.organizeImports": "explicit"
@@ -75,6 +86,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode", // JavaScriptファイルのデフォルトフォーマッターにPrettierを指定
         "editor.formatOnSave": true // JavaScriptファイル保存時に自動フォーマットを有効化
     },
-    "terminal.integrated.defaultProfile.windows": "Git Bash"
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
 }
 

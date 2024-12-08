@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+ruff
+openpyxl
+scikit-learn
+seaborn
+xgboost
+lightgbm

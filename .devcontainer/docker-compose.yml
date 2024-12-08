@@ -10,3 +10,4 @@ services:
       - ../src:/work/src
       - ../settings:/work/settings
       - ../.vscode:/work/.vscode
+      - ../notebooks:/work/notebooks

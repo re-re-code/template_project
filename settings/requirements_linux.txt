@@ -1,0 +1,7 @@
+sudo
+python3-pip
+curl
+git
+tree
+vim
+graphviz

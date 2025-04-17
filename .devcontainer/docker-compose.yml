@@ -1,13 +1,16 @@
 services:
-  sudo-is-testing: # 使用するサービス名
+  template_project_byrs: # 使用するサービス名
     build:
       context: ../ # ビルドの基点となるディレクトリ
       dockerfile: ./.devcontainer/Dockerfile # Dockerfileの場所（contextからの相対パス）
-    image: sudo-is-testing # ビルドしたイメージ名
-    container_name: sudo-is-testing # コンテナ名
+    image: template_project_byrs # ビルドしたイメージ名
+    container_name: template_project_byrs # コンテナ名
     volumes: # コンテナとローカルを同期するディレクトリの指定
       - ../data:/work/data # 生データなどの保存用
       - ../src:/work/src # プロジェクトのソースコード
       - ../settings:/work/settings # 設定ファイルやスクリプトの格納場所
       - ../.vscode:/work/.vscode # VS Code用のワークスペース設定
       - ../notebooks:/work/notebooks # Jupyter Notebookの作業ディレクトリ
+    working_dir: /work
+    tty: true
+    stdin_open: true

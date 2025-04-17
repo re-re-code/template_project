@@ -1,8 +1,8 @@
 {
-    "name": "sudo-is-testing", // コンテナ名。VS Code内での識別名
+    "name": "template_project_byrs", // コンテナ名。VS Code内での識別名
     "workspaceFolder": "/work", // コンテナ内でのワークスペースディレクトリ
     "dockerComposeFile": ["docker-compose.yml"], // 使用するDocker Composeファイル
-    "service": "sudo-is-testing", // 利用するサービス名（docker-compose.ymlで定義）
+    "service": "template_project_byrs", // 利用するサービス名（docker-compose.ymlで定義）
     "customizations": {
         "vscode": {
             "extensions": [ // 必要なVS Code拡張機能一覧

@@ -7,3 +7,5 @@ scikit-learn
 seaborn
 xgboost
 lightgbm
+mpltern
+shap

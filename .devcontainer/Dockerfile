@@ -9,10 +9,11 @@ ENV TZ=Asia/Tokyo
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 # 必要なパッケージやPythonライブラリをインストールするスクリプトを実行
-COPY settings/install_packages.sh /work/settings/
-COPY settings/requirements_linux.txt /work/settings/
-COPY settings/requirements_py.txt /work/settings/
-RUN bash /work/settings/install_packages.sh
+COPY settings/install_packages.sh /opt/settings/
+COPY settings/requirements_linux.txt /opt/settings/
+COPY settings/requirements_py.txt /opt/settings/
+COPY settings/pyproject.toml /work/
+RUN bash /opt/settings/install_packages.sh
 
 # 開発用ユーザーを作成
 ARG USERNAME=user

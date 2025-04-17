@@ -36,6 +36,8 @@
             "source.organizeImports": "explicit"
         }
     },
+    // ======== Ruff設定 (PythonのLinter) ========
+    "ruff.configuration":"/opt/settings/pyproject.toml", // Ruffの設定ファイルを指定
     // ======== Jupyter固有の設定 ========
     "[jupyter]": {
         "editor.formatOnSave": true, // 保存時に自動フォーマットを有効化

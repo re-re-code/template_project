@@ -9,3 +9,5 @@ xgboost
 lightgbm
 mpltern
 shap
+ipython
+ipykernel

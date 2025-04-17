@@ -48,10 +48,6 @@
             "source.organizeImports": "explicit"
         }
     },
-    // ======== Ruff設定 (PythonのLinter) ========
-    "ruff.lint.args": [
-        "--config=./settings/pyproject.toml" // Ruffの設定ファイルを指定
-    ],
     // ======== ワークベンチの外観設定 ========
     "workbench.iconTheme": "simple-icons", // アイコンテーマをシンプルに設定
     "workbench.colorTheme": "Default Dark Modern", // カラーテーマを暗めに設定

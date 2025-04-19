@@ -10,6 +10,10 @@ services:
       - ../src:/work/src # プロジェクトのソースコード
       - ../.vscode:/work/.vscode # VS Code用のワークスペース設定
       - ../notebooks:/work/notebooks # Jupyter Notebookの作業ディレクトリ
-    working_dir: /work
-    tty: true
-    stdin_open: true
+    working_dir: /work # コンテナ内での作業ディレクトリ（カレントディレクトリ）
+    tty: true # 仮想端末（TTY）を有効にして、VS Codeのターミナルなどが使いやすくなる
+    stdin_open: true # 標準入力を開いたままにする（ターミナル操作を可能に）
+    runtime: nvidia # NVIDIA Container Runtime を使用してGPUを認識させる
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all # すべてのGPUをコンテナから見えるようにする
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility # GPU機能の中で必要なものだけを有効化（computeとutility）
